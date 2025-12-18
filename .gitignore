@@ -1,0 +1,6 @@
+﻿node_modules/
+data/
+ngrok.exe
+postgres-data/
+logs/
+.env
