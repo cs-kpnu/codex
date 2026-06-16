@@ -1,6 +1,22 @@
-﻿node_modules/
+﻿# Cache files
+node_modules/
 data/
 ngrok.exe
 postgres-data/
 logs/
 .env
+
+# Service IDE files 
+.DS_Store
+**/.DS_Store
+Thumbs.db
+.idea/
+*.iml
+*.iws
+.vscode/
+!.vscode/extensions.json
+*.code-workspace
+
+# DB data
+*.dump
+*.sql 

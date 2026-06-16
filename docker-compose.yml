@@ -1,7 +1,9 @@
-version: "3"
+version: "3.8"
 services:
   db:
     image: postgres:15-alpine
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_DB: wiki
       POSTGRES_PASSWORD: wikipassword123
@@ -24,7 +26,10 @@ services:
       DB_NAME: wiki
     ports:
       - "3000:3000"
+    volumes:
+      - wiki-storage:/wiki/data
     restart: unless-stopped
 
 volumes:
   db-data:
+  wiki-storage:
