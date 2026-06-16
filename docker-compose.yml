@@ -5,9 +5,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: wiki
-      POSTGRES_PASSWORD: wikipassword123
-      POSTGRES_USER: wikiuser
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_PASSWORD: ${WIKI_PASSWORD}
+      POSTGRES_USER: ${WIKI_AND_DB_USERNAME}
     logging:
       driver: "none"
     volumes:
@@ -20,10 +20,10 @@ services:
     environment:
       DB_TYPE: postgres
       DB_HOST: db
-      DB_PORT: 5432
-      DB_USER: wikiuser
-      DB_PASS: wikipassword123
-      DB_NAME: wiki
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${WIKI_AND_DB_USERNAME}
+      DB_PASS: ${WIKI_PASSWORD}
+      DB_NAME: ${DB_NAME}
     ports:
       - "3000:3000"
     volumes:

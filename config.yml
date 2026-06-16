@@ -8,7 +8,7 @@
 # Port the server should listen to
 # ---------------------------------------------------------------------
 
-port: 3000
+port: ${WIKI_PORT}
 
 # ---------------------------------------------------------------------
 # Database
@@ -25,10 +25,10 @@ db:
 
   # PostgreSQL / MySQL / MariaDB / MS SQL Server only:
   host: db
-  port: 5432
-  user: wikiuser
-  pass: wikipassword123
-  db: wiki
+  port: ${DB_PORT}
+  user: ${WIKI_AND_DB_USERNAME}
+  pass: ${WIKI_PASSWORD}
+  db: ${DB_NAME}
   ssl: false
 
   # Optional - PostgreSQL / MySQL / MariaDB only:
