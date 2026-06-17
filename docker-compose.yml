@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   db:
-    image: postgres:15-alpine
+    image: postgres:17-alpine
     ports:
       - "5432:5432"
     environment:
@@ -12,7 +12,7 @@ services:
       driver: "none"
     volumes:
       - db-data:/var/lib/postgresql/data
-
+      - ./wiki_backup.sql:/docker-entrypoint-initdb.d/init.sql
   wiki:
     image: requarks/wiki:2
     depends_on:
